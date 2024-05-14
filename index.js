@@ -7,6 +7,10 @@ import mongoose from "mongoose";
 import {CONNECTION_STRING} from './config/db.config.js';
 import errorHandler from './helper/error_handler.js';
 
+//import routes here
+import UserRoutes from './routes/user.js';
+import AuthRoutes from './routes/auth.js';
+
 const app = express();
 
 app.use(cors());
@@ -18,10 +22,11 @@ app.options('*', cors(corsOptions)); // preflight OPTIONS; put before other rout
 
 app.use (bodyParser.json({limit: '50mb'})); // parse requests of content-type - application/json
 app.use (bodyParser.urlencoded({extended:true, limit: '50mb'})); // parse requests of content-type - application/x-www-form-urlencoded
-console.log(errorHandler);
+
 app.use(errorHandler);
 
-app.use(express.static('public'));// make the public foilders files available publicly
+app.use('/api/v1', UserRoutes);
+app.use('/api/v1', AuthRoutes);
 
 dotenv.config(); // loading all the .env variables
 
