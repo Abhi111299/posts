@@ -2,7 +2,8 @@ import { Card } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import ButtonGroup from "react-bootstrap/ButtonGroup"; 
 
-const Post1 = () => {
+const Posts = ({postData}) => {
+	console.log("inside the posts component", postData);
 	return (
 		<Card>
 			<Card.Body>
@@ -30,4 +31,4 @@ const Post1 = () => {
 	);
 };
 
-export default Post1;
+export default Posts;
