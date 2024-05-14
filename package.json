@@ -2,9 +2,12 @@
   "name": "posts",
   "version": "1.0.0",
   "description": "This is a repository that contains the Posts application.",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js",
+    "prod": "node index.js"
   },
   "author": "Abhishek Yadav",
   "license": "MIT",
