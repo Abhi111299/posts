@@ -10,6 +10,7 @@ import errorHandler from './helper/error_handler.js';
 //import routes here
 import UserRoutes from './routes/user.js';
 import AuthRoutes from './routes/auth.js';
+import PostRoutes from './routes/post.js';
 
 const app = express();
 
@@ -27,6 +28,7 @@ app.use(errorHandler);
 
 app.use('/api/v1', UserRoutes);
 app.use('/api/v1', AuthRoutes);
+app.use('/api/v1', PostRoutes);
 
 dotenv.config(); // loading all the .env variables
 
